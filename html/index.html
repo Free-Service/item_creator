@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -14,15 +15,70 @@
   </head>
 
   <body>
-    <div class="input-container">
-      <!-- Input fields here -->
-      <input type="text" placeholder="Input 1">
-      <input type="text" placeholder="Input 2">
-      <input type="text" placeholder="Input 3">
+    <div class = "container" style = "display:none;">
+      <iconify-icon icon="logos:database-labs" class = "bg_icon"></iconify-icon>
+       <div class = "item_text_heading">
+        <h1>ITEM EDITOR</h1>
+        <button id="iconButton" onclick="close()"></button>
+          <iconify-icon icon="iconamoon:exit-bold" class = "exit"></iconify-icon>
+        </button>
+       </div>
+       <div class="input_fields">
+        <input type="text" class="rounded-input" placeholder="Name">
+        <input type="text" class="rounded-input" placeholder="Label">
+        <input type="number" class="rounded-input small-input" placeholder="Weight" min="0">
+        <select class="rounded-input">
+          <option value="" disabled selected hidden>rare</option>
+          <option value="0">false</option>
+          <option value="1">true</option>
+        </select>
+        <select class="rounded-input">
+          <option value="" disabled selected hidden>Can Remove</option>
+          <option value="0">false</option>
+          <option value="1">true</option>
+        </select>
+        <button class="save-button"><iconify-icon  icon="uiw:plus" class = "save_icon"></iconify-icon></button>
+      </div>
+      <div class="item_list_container">
+        <ul class="item-list">
+          <li class="item">
+            <span class="item-name">Item Name 1</span>
+            <span class="item-label">Label 1</span>
+            <span class="item-weight">Weight 1</span>
+            <span class="item-rarity">Rarity 1</span>
+            <span class="item-can-remove">Can Remove 1</span>
+            <button class="edit-button"><iconify-icon icon="ant-design:setting-outlined"></iconify-icon></button>
+            <button class="delete-button"><iconify-icon icon="material-symbols:delete-outline"></iconify-icon></button>
+          </li>
+          <li class="item">
+            <span class="item-name">Item Name 2</span>
+            <span class="item-label">Label 2</span>
+            <span class="item-weight">Weight 2</span>
+            <span class="item-rarity">Rarity 2</span>
+            <span class="item-can-remove">Can Remove 2</span>
+            <button class="edit-button"><iconify-icon icon="ant-design:setting-outlined"></iconify-icon></button>
+            <button class="delete-button"><iconify-icon icon="material-symbols:delete-outline"></iconify-icon></button>
+          </li>
+        </ul>
+      
+      
+      
+      
+      
+    </div>
+  </body>
+</html>
+
+
+<!-- <iconify-icon icon="material-symbols:place-item-rounded" class="bg"></iconify-icon>
+      <button id="iconButton" onclick="close()">
+        <iconify-icon icon="ep:close-bold" class="exit"></iconify-icon>
+      </button>
+      <input class ="input1" type="text" placeholder="Input 1">
+      <input class ="input2" type="text" placeholder="Input 2">
+      <input class ="input3" type="text" placeholder="Input 3">
     </div>
     <div class="list-container">
       <h1>Item List</h1>
       <ul id="item-list"></ul>
-    </div>
-  </body>
-</html>
+    </div> -->
