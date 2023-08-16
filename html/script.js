@@ -1,11 +1,10 @@
-
+ 
 
 window.addEventListener("message", async function (event) {
   var item = event.data;
 
   if (item.state === "show") {
-    $("body").show();
-    document.getElementsByTagName("body")[0].style.display = "flex";
+    $(".container").show();
     LoadItemsinList(item.items)
   }
 });
@@ -17,7 +16,7 @@ document.onkeyup = function (data) {
 };
 
 function Close() {
-  $("body").hide();
+  $(".container").hide();
   $.post("https://item_creator/exit", JSON.stringify({}));
 }
 
@@ -26,8 +25,16 @@ function LoadItemsinList(ItemsList) {
   const itemList = JSON.parse(ItemsList);
 
   for (const item of itemList) {
-    const listItem = document.createElement('li');
-    listItem.textContent = `${item.label} - Weight: ${item.weight}`;
-    itemListElement.appendChild(listItem);
+  $(".item-list").append(`
+    <li class="item">
+      <span class="item-name">${item.name}</span>
+      <span class="item-label">${item.label}</span>
+      <span class="item-weight">${item.wieght}</span>
+      <span class="item-rarity">Rarity ${item.rare}</span>
+      <span class="item-can-remove">${item.can_remove}</span> 
+      <button class="edit-button"><iconify-icon icon="ant-design:setting-outlined"></iconify-icon></button>
+      <button class="delete-button"><iconify-icon icon="material-symbols:delete-outline"></iconify-icon></button>
+    </li>
+  `);
   }
 }
