@@ -28,12 +28,7 @@ ui_page ('html/index.html')
 
 files {
 	'config.js',
-	'html/images/skull.png',
     'html/index.html',
     'html/style.css',
-    'html/script.js',
-	'html/images/*.png',
-	'html/images/*.jpg',
-	'html/images/*.gif',
-	'html/images/*.webp'
+    'html/script.js'
 }
