@@ -1,44 +1,213 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: none;
-  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+/* CONTAINER */
+.container {
+  position: absolute;
+  background-color: #2b2b2b;
+  width: 1000px;
+  height: 700px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(63, 63, 63, 0.513);
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg_icon {
+  font-size: 650px;
+  z-index: 1;
+}
+
+.item_text_heading {
+  position: absolute;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.233);
+  backdrop-filter: blur(10px);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  top: 0;
+  left: 50%;
+  width: 400px;
+  height: 50px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.755);
+  z-index: 1;
+}
+
+/* EXIT */
+.exit {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  top: 18%;
+  right: 2%;
+  -webkit-user-drag: none;
+  user-select: none;
+  cursor: pointer;
+  transition: font-size 0.3s, color 0.3s;
+  z-index: 4;
+}
+
+.exit:hover {
+  color: red;
+  font-size: 30px;
+  transform: scale(0.9);
+}
+
+#iconButton {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #f0f0f000;
+  cursor: pointer;
+  top: 19%;
+  right: 24%;
+  z-index: 4;
+}
+
+#iconButton:focus {
+  outline: none;
+}
+
+/* INPUTS */
+.input_fields {
+  position: fixed;
+  bottom: 15px;
+  display: flex;
+  align-items: center;
+  padding-left: 1%;
+  gap: 40px;
+  z-index: 3;
+}
+
+.rounded-input {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 6px;
+  width: 120px;
+}
+
+.save-button {
+  border: none;
+  background-color: #0084008e;
+  color: white;
+  border-radius: 50px;
+  left: 5px;
+  padding: 4px 5px;
+  cursor: pointer;
+  display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  position: relative;
 }
 
-.input-container {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
+.save-button:hover {
+  background-color: rgb(0, 203, 0);
 }
 
-.list-container {
-  width: 1000px;
-  height: 600px;
-  margin-top: 40px;
-  overflow: auto;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: white;
+.save_icon{
+  font-size: 25px;
+  color: rgb(255, 255, 255);
 }
 
-ul {
+/* ITEM_LOADING_LIST */
+.item_list_container {
+  position: absolute;
+  background-color: rgba(130, 130, 130, 0.291); /* Halbtransparenter Hintergrund */
+  backdrop-filter: blur(10px); /* Hinzufügen des Blur-Effekts für Glassmorphism */
+  width: 955px;
+  height: 550px;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 4;
+}
+
+.item-list {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-li {
-  border: 1px solid #ddd;
+.item {
+  background-color: rgba(255, 255, 255, 0.2); /* Halbtransparenter Hintergrund */
+  backdrop-filter: blur(10px); /* Hinzufügen des Blur-Effekts für Glassmorphism */
+  color: white;
   padding: 10px;
-  margin: 10px 0;
   border-radius: 5px;
+  margin-bottom: 10px;
+  width: 900px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 2px 10px rgb(0, 0, 0); /* Schatten für den Glassmorphism-Effekt */
+}
+
+.item-details {
+  margin-right: 10px;
+}
+
+.item-details li {
+  margin-bottom: 5px;
+}
+
+.item-actions {
+  display: flex;
+  gap: 5px;
+  align-items: center; /* Icons vertikal zentrieren */
+}
+
+.edit-button,
+.delete-button {
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: flex; /* Für flexibles Layout */
+  align-items: center; /* Icons vertikal zentrieren */
+}
+
+.edit-button {
+  position: fixed;
+  background-color: #008400;
+  color: white;
+  right: 60px;
+}
+
+.edit-button:hover {
+  background-color: rgb(0, 203, 0);
+
+}
+
+.delete-button {
+  background-color: #8d0000;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #db0000;
 }
