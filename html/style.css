@@ -1,12 +1,44 @@
-
 body {
-  min-height: 100vh;
-  overflow: hidden;
-  display: flex;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: none;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
-  font-size: 25px;
-  font-weight: 500;
+  min-height: 100vh;
 }
 
+.input-container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.list-container {
+  width: 1000px;
+  height: 600px;
+  margin-top: 40px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
