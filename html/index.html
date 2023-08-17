@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <div class = "container" style = "display:none;">
+    <div class = "container" style = "dsdisplay:none;">
       <iconify-icon icon="logos:database-labs" class = "bg_icon"></iconify-icon>
        <div class = "item_text_heading">
         <h1>ITEM EDITOR</h1>
@@ -41,14 +41,93 @@
       </div>
       <div class="item_list_container">
         <ul class="item-list">
-          <!-- Items -->
-        </ul>
-      
-      
-      
-      
-      
+          <li class="item">
+            <span class="item-name">Item Name 1</span>
+            <span class="item-label">Label 1</span>
+            <span class="item-weight">Weight 1</span>
+            <span class="item-rarity">Rarity 1</span>
+            <span class="item-can-remove">Can Remove 1</span>
+            <button class="edit-button"><iconify-icon icon="ant-design:setting-outlined"></iconify-icon></button>
+            <button class="delete-button"><iconify-icon icon="material-symbols:delete-outline"></iconify-icon></button>
+            <div class="item-info" style="display:none">
+              <input type="text" class="rounded-input-edit" placeholder="Item Name 1">
+              <input type="text" class="rounded-input-edit" placeholder="Label 1">
+              <input type="number" class="rounded-input-edit" placeholder="Weight 1" min="0">
+              <select class="rounded-input-edit">
+                <option value="" disabled selected hidden>Rarity 1</option>
+                <option value="0">false</option>
+                <option value="1">true</option>
+              </select>
+              <select class="rounded-input-edit">
+                <option value="" disabled selected hidden>Can Remove 1</option>
+                <option value="0">false</option>
+                <option value="1">true</option>
+              </select>
+              <button class="save-edit-button"><iconify-icon icon="fluent:save-28-regular"></iconify-icon></button>
+              <button class="cancel-edit-button"><iconify-icon icon="iconoir:cancel"></iconify-icon></button>
+            </div>
+          </li>
+          <li class="item">
+            <span class="item-name">Item Name 1</span>
+            <span class="item-label">Label 1</span>
+            <span class="item-weight">Weight 1</span>
+            <span class="item-rarity">Rarity 1</span>
+            <span class="item-can-remove">Can Remove 1</span>
+            <button class="edit-button"><iconify-icon icon="ant-design:setting-outlined"></iconify-icon></button>
+            <button class="delete-button"><iconify-icon icon="material-symbols:delete-outline"></iconify-icon></button>
+            <div class="item-info" style="display:none">
+              <input type="text" class="rounded-input-edit" placeholder="Item Name 1">
+              <input type="text" class="rounded-input-edit" placeholder="Label 1">
+              <input type="number" class="rounded-input-edit" placeholder="Weight 1" min="0">
+              <select class="rounded-input-edit">
+                <option value="" disabled selected hidden>Rarity 1</option>
+                <option value="0">false</option>
+                <option value="1">true</option>
+              </select>
+              <select class="rounded-input-edit">
+                <option value="" disabled selected hidden>Can Remove 1</option>
+                <option value="0">false</option>
+                <option value="1">true</option>
+              </select>
+                <button class="save-edit-button"><iconify-icon icon="fluent:save-28-regular"></iconify-icon></button>
+                <button class="cancel-edit-button"><iconify-icon icon="iconoir:cancel"></iconify-icon></button>
+            </div>
+          </li>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const editButtons = document.querySelectorAll('.edit-button');
+
+      editButtons.forEach(editButton => {
+        editButton.addEventListener('click', function() {
+          const itemElement = this.closest('.item');
+          const item = document.querySelector('.item');
+          const itemInfo = itemElement.querySelector('.item-info');
+
+          if (itemInfo.style.display === 'none') {
+            item.style.height = 'auto';
+            itemInfo.style.display = 'block';
+            // $(".item-name").hide();
+            // $(".item-label").hide();
+            // $(".item-weight").hide();
+            // $(".item-rarity").hide();
+            // $(".item-can-remove").hide();
+            // $(".edit-button").hide();
+            // $(".delete-button").hide();
+          } else {
+            item.style.height = (item.clientHeight + 50) + 'px';
+            itemInfo.style.display = 'none';
+            $(".item-name").show();
+            $(".item-label").show();
+            $(".item-weight").show();
+            $(".item-rarity").show();
+            $(".item-can-remove").show();
+            $(".delete-button").show();
+          }
+        });
+      });
+    });
+  </script>
   </body>
 </html>
 

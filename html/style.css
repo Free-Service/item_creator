@@ -130,11 +130,55 @@ body {
   color: rgb(255, 255, 255);
 }
 
+/* INPUTS ITEMS */
+
+.item-info {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  /* display: none; */
+}
+
+.save-edit-button,
+.cancel-edit-button{
+  position: relative;
+  left: 60px;
+  border: none;
+  /* font-size: 20px; */
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.save-edit-button {
+  background-color: #008400;
+  color: white;
+  font-size: 25px;
+}
+
+.save-edit-button:hover {
+  background-color: rgb(0, 203, 0);
+
+}
+
+.cancel-edit-button {
+  background-color: #8d0000;
+  color: white;
+  font-size: 25px;
+}
+
+.cancel-edit-button:hover {
+  background-color: #db0000;
+}
+
 /* ITEM_LOADING_LIST */
 .item_list_container {
   position: absolute;
-  background-color: rgba(130, 130, 130, 0.291); /* Halbtransparenter Hintergrund */
-  backdrop-filter: blur(10px); /* Hinzufügen des Blur-Effekts für Glassmorphism */
+  background-color: rgba(130, 130, 130, 0.291);
+  backdrop-filter: blur(10px); 
   width: 955px;
   height: 550px;
   top: 52%;
@@ -142,28 +186,34 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
   z-index: 4;
 }
 
 .item-list {
   list-style: none;
   padding: 0;
+  overflow-y: auto;
+  max-height: 94%;
+  margin-right: 5px;
 }
 
 .item {
-  background-color: rgba(255, 255, 255, 0.2); /* Halbtransparenter Hintergrund */
-  backdrop-filter: blur(10px); /* Hinzufügen des Blur-Effekts für Glassmorphism */
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
   color: white;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
   width: 900px;
+  /* height: 30px; */
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0px 2px 10px rgb(0, 0, 0); /* Schatten für den Glassmorphism-Effekt */
+  box-shadow: 0px 2px 10px rgb(0, 0, 0);
 }
 
 .item-details {
@@ -177,7 +227,7 @@ body {
 .item-actions {
   display: flex;
   gap: 5px;
-  align-items: center; /* Icons vertikal zentrieren */
+  align-items: center;
 }
 
 .edit-button,
@@ -187,8 +237,8 @@ body {
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
-  display: flex; /* Für flexibles Layout */
-  align-items: center; /* Icons vertikal zentrieren */
+  display: flex;
+  align-items: center;
 }
 
 .edit-button {
@@ -210,4 +260,23 @@ body {
 
 .delete-button:hover {
   background-color: #db0000;
+}
+
+/* Anpassungen für die Scrollbar */
+.item-list::-webkit-scrollbar {
+  width: 10px; /* Breite der Scrollbar */
+}
+
+.item-list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 0, 0, 0.526);
+  border-radius: 5px; /* Abrundung der Ecken des Thumbs */
+}
+
+.item-list::-webkit-scrollbar-thumb:hover {
+  background-color: #444; /* Farbe des Thumbs bei Hover */
+}
+
+.item-list::-webkit-scrollbar-track {
+  background-color: #dddddd6e; /* Farbe der Scrollbar-Spur */
+  border-radius: 5px; /* Abrundung der Ecken der Spur */
 }
