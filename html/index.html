@@ -39,7 +39,10 @@
         </select>
         <button class="save-button"><iconify-icon  icon="uiw:plus" class = "save_icon"></iconify-icon></button>
       </div>
-      <div class="item_list_container">
+      <div class="list_container">
+        <div class = "list_text_heading">
+          <h1>DB NAME  &nbsp; &nbsp;|  &nbsp; &nbsp;ITEM DISPLAY NAME  &nbsp; &nbsp;| &nbsp; &nbsp; ITEM WEIGHT  &nbsp; &nbsp;| &nbsp; &nbsp; RARE ITEM  &nbsp; &nbsp;| &nbsp; &nbsp; CAN REMOVE ITEM  &nbsp; &nbsp;| &nbsp; &nbsp; EDIT ITEM  &nbsp;| &nbsp; DELETE ITEM</h1>
+         </div>
         <ul class="item-list">
           <li class="item">
             <span class="item-name">Item Name 1</span>
@@ -94,6 +97,7 @@
             </div>
           </li>
     </div>
+    </div>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
       const editButtons = document.querySelectorAll('.edit-button');
@@ -101,21 +105,18 @@
       editButtons.forEach(editButton => {
         editButton.addEventListener('click', function() {
           const itemElement = this.closest('.item');
-          const item = document.querySelector('.item');
           const itemInfo = itemElement.querySelector('.item-info');
 
           if (itemInfo.style.display === 'none') {
-            item.style.height = 'auto';
             itemInfo.style.display = 'block';
-            // $(".item-name").hide();
-            // $(".item-label").hide();
-            // $(".item-weight").hide();
-            // $(".item-rarity").hide();
-            // $(".item-can-remove").hide();
-            // $(".edit-button").hide();
-            // $(".delete-button").hide();
+            $(".item-name").hide();
+            $(".item-label").hide();
+            $(".item-weight").hide();
+            $(".item-rarity").hide();
+            $(".item-can-remove").hide();
+            $(".edit-button").hide();
+            $(".delete-button").hide();
           } else {
-            item.style.height = (item.clientHeight + 50) + 'px';
             itemInfo.style.display = 'none';
             $(".item-name").show();
             $(".item-label").show();

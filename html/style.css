@@ -131,47 +131,82 @@ body {
 }
 
 /* INPUTS ITEMS */
-
-.item-info {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  /* display: none; */
+.rounded-input-edit {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 8px;
+  width: 120px;
+  margin: 10px;
+  margin-bottom: 10px;
 }
 
+
 .save-edit-button,
-.cancel-edit-button{
+.cancel-edit-button {
   position: relative;
-  left: 60px;
+  left: 32px;
+  top: 2px;
   border: none;
-  /* font-size: 20px; */
   border-radius: 5px;
-  padding: 5px 10px;
-  margin: 5px;
+  padding: 5px 12px;
+  margin: 3px;
   cursor: pointer;
   align-items: center;
+  font-size: 16px; /* Gemeinsame Eigenschaft für beide Buttons */
 }
 
 .save-edit-button {
   background-color: #008400;
   color: white;
-  font-size: 25px;
 }
 
 .save-edit-button:hover {
   background-color: rgb(0, 203, 0);
-
 }
 
 .cancel-edit-button {
   background-color: #8d0000;
   color: white;
-  font-size: 25px;
 }
 
 .cancel-edit-button:hover {
   background-color: #db0000;
+}
+
+.list_container {
+  position: absolute;
+  background-color: rgba(130, 130, 130, 0.291);
+  backdrop-filter: blur(10px); 
+  width: 955px;
+  height: 550px;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 4;
+}
+
+.list_text_heading {
+  position: absolute;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.233);
+  backdrop-filter: blur(10px);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 7px;
+  top: 0;
+  left: 50%;
+  width: 1000px;
+  height: 25px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.755);
+  z-index: 1;
 }
 
 /* ITEM_LOADING_LIST */
@@ -192,7 +227,7 @@ body {
 
 .item-list {
   list-style: none;
-  padding: 0;
+  padding: 10px 0px;
   overflow-y: auto;
   max-height: 94%;
   margin-right: 5px;
@@ -204,10 +239,9 @@ body {
   color: white;
   padding: 10px;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-top: 10px;
   width: 900px;
-  /* height: 30px; */
-  height: auto;
+  height: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -222,12 +256,6 @@ body {
 
 .item-details li {
   margin-bottom: 5px;
-}
-
-.item-actions {
-  display: flex;
-  gap: 5px;
-  align-items: center;
 }
 
 .edit-button,
